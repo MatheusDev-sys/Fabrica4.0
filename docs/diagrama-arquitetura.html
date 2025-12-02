@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Precisium - Arquitetura do Sistema</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 40px;
+            background: #f5f5f5;
+        }
+
+        .diagram {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            text-align: center;
+            color: #0a85ff;
+            margin-bottom: 40px;
+        }
+
+        .layer {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+
+        .layer.ui {
+            background: linear-gradient(135deg, #0a85ff 0%, #0066cc 100%);
+        }
+
+        .layer.app {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        }
+
+        .layer.data {
+            background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+        }
+
+        .layer h2 {
+            margin: 0 0 15px 0;
+            font-size: 24px;
+        }
+
+        .components {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .component {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 6px;
+            text-align: center;
+            backdrop-filter: blur(10px);
+        }
+
+        .arrow {
+            text-align: center;
+            font-size: 40px;
+            color: #0a85ff;
+            margin: 10px 0;
+        }
+
+        .footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #666;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="diagram">
+        <h1>🏗️ Arquitetura do Sistema Precisium</h1>
+
+        <div class="layer ui">
+            <h2>📱 Camada de Interface (UI)</h2>
+            <div class="components">
+                <div class="component">📊 Dashboard</div>
+                <div class="component">🏭 Máquinas</div>
+                <div class="component">📋 Ordens</div>
+                <div class="component">🔧 Manutenção</div>
+                <div class="component">📦 Peças</div>
+                <div class="component">👥 Operadores</div>
+                <div class="component">⚠️ Ocorrências</div>
+                <div class="component">📈 Relatórios</div>
+            </div>
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="layer app">
+            <h2>⚙️ Camada de Aplicação</h2>
+            <div class="components">
+                <div class="component">React Components</div>
+                <div class="component">Context API</div>
+                <div class="component">React Router</div>
+                <div class="component">State Management</div>
+                <div class="component">Recharts</div>
+                <div class="component">jsPDF</div>
+            </div>
+        </div>
+
+        <div class="arrow">↓</div>
+
+        <div class="layer data">
+            <h2>💾 Camada de Dados</h2>
+            <div class="components">
+                <div class="component">Mock Data</div>
+                <div class="component">Local State</div>
+                <div class="component">TypeScript Types</div>
+                <div class="component">(Future: API REST)</div>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p><strong>Precisium Factory Control</strong> - Arquitetura Moderna e Escalável</p>
+            <p>React 19 • TypeScript 5.6 • Vite 6.4</p>
+        </div>
+    </div>
+
+    <script>
+        // Para capturar como imagem, use: Ctrl+P > Salvar como PDF
+        // Ou use uma extensão de screenshot do navegador
+        console.log('Diagrama de Arquitetura carregado. Use Ctrl+P para salvar como PDF.');
+    </script>
+</body>
+
+</html>

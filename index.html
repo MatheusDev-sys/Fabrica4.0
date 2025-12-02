@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Precisium Factory Control</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;900&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet" />
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: "#0a85ff",
+              "background-dark": "#0f1923",
+              "surface-dark": "#111418",
+              "border-dark": "#27303a"
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+              display: ['Space Grotesk', 'sans-serif'],
+            },
+            animation: {
+              'fade-in': 'fadeIn 0.5s ease-out',
+              'slide-up': 'slideUp 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+              'float': 'float 6s ease-in-out infinite',
+            },
+            keyframes: {
+              fadeIn: {
+                '0%': { opacity: '0' },
+                '100%': { opacity: '1' },
+              },
+              slideUp: {
+                '0%': { transform: 'translateY(40px)', opacity: '0' },
+                '100%': { transform: 'translateY(0)', opacity: '1' },
+              },
+              float: {
+                '0%, 100%': { transform: 'translateY(0)' },
+                '50%': { transform: 'translateY(-10px)' },
+              }
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      .material-symbols-outlined {
+        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+      }
+      .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+      }
+      .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+      }
+      
+      /* New Button Styles */
+      .btn-animate {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-animate:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(10, 133, 255, 0.4);
+        filter: brightness(1.1);
+      }
+      .btn-animate:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(10, 133, 255, 0.2);
+      }
+
+      /* Card Hover Effects */
+      .card-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid transparent;
+      }
+      .dark .card-hover {
+        border-color: #27303a;
+      }
+      /* Login Specific Animations */
+      .glass-panel {
+        background: rgba(15, 25, 35, 0.65);
+        backdrop-filter: blur(16px);
+        -webkit-backdrop-filter: blur(16px);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+      }
+
+      /* Custom Input Focus Animation */
+      .input-group:focus-within label {
+        color: #0a85ff;
+      }
+      .input-group:focus-within .input-icon {
+        color: #0a85ff;
+      }
+
+      /* Global Animations - Blue Theme & Contour Effect */
+      .card-hover {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 1px solid transparent;
+        position: relative;
+        z-index: 1;
+      }
+      .dark .card-hover {
+        border-color: #27303a;
+      }
+      .card-hover:hover {
+        transform: translateY(-4px);
+        border-color: #0a85ff; /* Blue border on hover */
+        box-shadow: 0 0 20px rgba(10, 133, 255, 0.25); /* Blue glow */
+        z-index: 10;
+      }
+
+      .btn-animate {
+        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+        overflow: hidden;
+      }
+      .btn-animate:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 4px 15px rgba(10, 133, 255, 0.4);
+        filter: brightness(1.1);
+      }
+      .btn-animate:active {
+        transform: translateY(0);
+        box-shadow: 0 2px 5px rgba(10, 133, 255, 0.2);
+      }
+
+      /* Mobile Responsive Utilities */
+      @media (max-width: 768px) {
+        /* Better table handling on mobile */
+        .table-container {
+          overflow-x: auto;
+          -webkit-overflow-scrolling: touch;
+        }
+        
+        /* Ensure minimum touch target size */
+        button, a, input, select, textarea {
+          min-height: 44px;
+        }
+        
+        /* Better text wrapping */
+        .mobile-wrap {
+          word-wrap: break-word;
+          overflow-wrap: break-word;
+        }
+        
+        /* Responsive padding adjustments */
+        .mobile-p-4 {
+          padding: 1rem !important;
+        }
+        
+        /* Hide overflow on mobile for cards */
+        .card-hover {
+          overflow: hidden;
+        }
+      }
+      
+      /* Table responsive wrapper */
+      .table-responsive {
+        display: block;
+        width: 100%;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+      }
+      
+      @media (max-width: 640px) {
+        /* Stack table cells vertically on very small screens */
+        .mobile-table-card {
+          display: block;
+          margin-bottom: 1rem;
+          border: 1px solid #27303a;
+          border-radius: 0.75rem;
+          padding: 1rem;
+        }
+        
+        .mobile-table-card > * {
+          display: block;
+          margin-bottom: 0.5rem;
+        }
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react/": "https://aistudiocdn.com/react@^19.2.0/",
+    "react": "https://aistudiocdn.com/react@^19.2.0",
+    "react-router-dom": "https://aistudiocdn.com/react-router-dom@^7.9.6",
+    "react-dom/": "https://aistudiocdn.com/react-dom@^19.2.0/",
+    "recharts": "https://aistudiocdn.com/recharts@^3.5.1",
+    "jspdf": "https://aistudiocdn.com/jspdf@^2.5.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body>
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>

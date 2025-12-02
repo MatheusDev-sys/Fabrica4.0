@@ -1,0 +1,5 @@
+{
+  "name": "Precisium Factory Control",
+  "description": "A comprehensive industrial control dashboard featuring machine monitoring, production orders, maintenance scheduling, and inventory management with a dark-themed UI.",
+  "requestFramePermissions": []
+}
